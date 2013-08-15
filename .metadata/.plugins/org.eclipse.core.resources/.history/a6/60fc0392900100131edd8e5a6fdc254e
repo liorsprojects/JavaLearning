@@ -1,0 +1,39 @@
+package com.liorginsberg.threads.producerconsumer;
+
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+import com.liorgisberg.threads.basic.GetTimeThread;
+
+public class SchduledThreadPoolExample {
+
+	
+	public static void main(String[] args) {
+		
+		addThreadsToPool();
+	
+	}
+
+	private static void addThreadsToPool() {
+		
+		ScheduledThreadPoolExecutor eventPool = new ScheduledThreadPoolExecutor(5);
+
+		eventPool.scheduleAtFixedRate(new PreformSystemCheck("Heat Values", 20), 0, 5, TimeUnit.SECONDS);
+		eventPool.scheduleAtFixedRate(new PreformSystemCheck("Memory Leaks", 25), 0, 0, TimeUnit.SECONDS);
+		
+		System.out.println("Number of Treads: " + Thread.activeCount());
+
+		Thread[] arrayOfThreads = new Thread[Thread.activeCount()];
+		
+		Thread.enumerate(arrayOfThreads);
+		
+		for (Thread thread : arrayOfThreads) {
+			System.out.println(thread.getName());
+		}
+		
+		for (Thread thread : arrayOfThreads) {
+			System.out.println(thread.getPriority());
+		}
+		
+	}
+}

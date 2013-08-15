@@ -1,0 +1,13 @@
+package com.liorginsberg.thread1;
+
+
+public class Demo1 {
+
+	public static void main(String[] args) {
+		RunnerThread runner1 = new RunnerThread();
+		runner1.start();
+		
+		RunnerThread runner2 = new RunnerThread();
+		runner2.start();
+	}
+}

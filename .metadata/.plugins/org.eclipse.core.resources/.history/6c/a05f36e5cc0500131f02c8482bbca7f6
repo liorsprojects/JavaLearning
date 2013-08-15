@@ -1,0 +1,10 @@
+package com.liorginsberg.designpatterns.factory;
+
+public class RocketEnemyShip extends EnemyShip{
+
+	public RocketEnemyShip() {
+		setName("UFO Enemy Ship");
+		setDamage(10.0);
+	}
+	
+}

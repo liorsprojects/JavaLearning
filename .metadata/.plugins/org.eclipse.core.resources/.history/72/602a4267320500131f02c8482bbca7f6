@@ -1,0 +1,12 @@
+package com.liorginsberg.designpatterns.observer;
+
+public class ObserverDemo {
+
+	public static void main(String[] args) {
+		StockGrabber stockGrabber = new StockGrabber();
+		StockObserver observer1 = new StockObserver(stockGrabber);
+		
+		stockGrabber.setIbmPrice(178.2);
+		stockGrabber.setApplePrice(300.2);
+	}
+}

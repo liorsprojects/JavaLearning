@@ -1,0 +1,5 @@
+package com.liorginsberg.designpatterns.strategy;
+
+public class Bird {
+
+}

@@ -1,0 +1,10 @@
+package com.liorgisberg.threads;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		new Thread(new GetTimeThread()).start();
+		new Thread(new DoSomthing("Calling a freind", 4000));
+	}
+
+}

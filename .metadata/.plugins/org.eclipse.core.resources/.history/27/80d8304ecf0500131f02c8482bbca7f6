@@ -1,0 +1,33 @@
+package com.liorginsberg.designpatterns.factory;
+
+import java.util.Scanner;
+
+public class EnemyShipTesting {
+	
+	public static void main(String[] args) {
+		EnemyShip enemyShip = null;
+		Scanner userInput = new Scanner(System.in);
+		
+		String enemyShipOption = "";
+		
+		System.out.println("What type of enemy ship? (U / R)");
+		
+		if(userInput.hasNextLine()) {
+			enemyShipOption = userInput.nextLine();
+		}
+		
+		if(enemyShipOption.equals("U")) {
+			enemyShip = new UFOEnemyShip();
+		} else {
+			enemyShip = new RocketEnemyShip();
+		}
+		
+		doStuff(enemyShip);
+	}
+
+	private static void doStuff(EnemyShip enemyShip) {
+		enemyShip.displayEnemyShip();
+		enemyShip.followHeroShip();
+		enemyShip.enemyShoots();
+	}
+}

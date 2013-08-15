@@ -1,0 +1,10 @@
+package com.liorgisberg.threads;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		Thread getTime = new Thread(new GetTimeThread());
+		getTime.start();
+	}
+
+}

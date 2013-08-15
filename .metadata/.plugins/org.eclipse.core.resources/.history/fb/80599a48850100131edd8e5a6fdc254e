@@ -1,0 +1,24 @@
+package com.liorginsberg.threads.producerconsumer;
+
+import java.util.concurrent.locks.ReentrantLock;
+
+public class PreformSystemCheck implements Runnable {
+
+	private String checkWhat;
+	
+	private ReentrantLock lock = new ReentrantLock();
+	
+	public PreformSystemCheck(String checkWhat) {
+		this.checkWhat = checkWhat;
+	}
+	
+	@Override
+	public void run() {
+		lock.lock();
+		
+		System.out.println("Checking " + this.checkWhat);
+		
+		lock.unlock();
+	}
+
+}

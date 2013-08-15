@@ -1,0 +1,5 @@
+package com.liorginsberg.designpatterns.observer;
+
+public class Subject {
+
+}

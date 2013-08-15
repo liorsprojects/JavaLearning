@@ -1,0 +1,25 @@
+package com.liorgisberg.threads;
+
+public class DoSomthing implements Runnable {
+
+	private String whatToDo;
+	
+	private long whenToDoInMill;
+	
+	public DoSomthing(String whatToDo, long whenToDoInMill) {
+		this.whatToDo = whatToDo;
+		this.whenToDoInMill = whenToDoInMill;
+	}
+
+	@Override
+	public void run() {
+		try {
+			Thread.sleep(whenToDoInMill);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println(whatToDo);
+	}
+
+}

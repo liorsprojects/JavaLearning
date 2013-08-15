@@ -1,0 +1,5 @@
+package com.liorginsberg.threads.producerconsumer;
+
+public class MySystem {
+
+}
