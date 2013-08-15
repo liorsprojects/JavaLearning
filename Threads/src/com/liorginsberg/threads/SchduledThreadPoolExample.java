@@ -1,0 +1,34 @@
+package com.liorginsberg.threads;
+
+
+public class SchduledThreadPoolExample {
+
+	
+	public static void main(String[] args) {
+		
+		addThreadsToPool();
+	
+	}
+
+	private static void addThreadsToPool() {
+		
+		new Thread(new PreformSystemCheck("Memory Leak", 15)).start();
+		new Thread(new PreformSystemCheck("Memory Usage", 25)).start();
+		
+		
+		System.out.println("Number of Treads: " + Thread.activeCount());
+
+		Thread[] arrayOfThreads = new Thread[Thread.activeCount()];
+		
+		Thread.enumerate(arrayOfThreads);
+		
+		for (Thread thread : arrayOfThreads) {
+			System.out.println(thread.getName());
+		}
+		
+		for (Thread thread : arrayOfThreads) {
+			System.out.println(thread.getPriority());
+		}
+		
+	}
+}

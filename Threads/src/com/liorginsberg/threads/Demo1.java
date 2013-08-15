@@ -1,0 +1,18 @@
+package com.liorginsberg.threads;
+
+/**
+ * initiate two instance of Threads and starting them 
+ * 
+ * @author owner
+ *
+ */
+public class Demo1 {
+
+	public static void main(String[] args) {
+		Thread t1 = new RunnerThread();
+		t1.start();
+		
+		Thread t2 = new RunnerThread();
+		t2.start();
+	}
+}
